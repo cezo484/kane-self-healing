@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout — Tiny Shop</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="/">Tiny Shop</a>
+      <p class="tagline">Demo checkout, no real payments.</p>
+    </div>
+  </header>
+
+  <main class="wrap narrow">
+    <h1>Checkout</h1>
+
+    <section class="order-summary" aria-label="Order summary">
+      <h2>Order summary</h2>
+      <ul id="summary-lines"></ul>
+      <p class="cart-total">Total: <strong id="summary-total">$0.00</strong></p>
+      <p id="summary-empty" hidden>Your cart is empty. <a href="/">Go back to the shop</a>.</p>
+    </section>
+
+    <form id="checkout-form" novalidate>
+      <h2>Your details</h2>
+      <label>
+        Full name
+        <input id="field-name" name="name" type="text" required autocomplete="name" placeholder="Test User">
+      </label>
+      <label>
+        Email
+        <input id="field-email" name="email" type="email" required autocomplete="email" placeholder="test@example.com">
+      </label>
+      <label>
+        Address
+        <input id="field-address" name="address" type="text" required autocomplete="street-address" placeholder="123 Demo Street">
+      </label>
+
+      <h2>Payment (demo card, never charged)</h2>
+      <label>
+        Card number
+        <input id="field-card" name="card" type="text" inputmode="numeric" required pattern="[0-9 ]{12,19}" placeholder="4242 4242 4242 4242">
+      </label>
+      <div class="form-row">
+        <label>
+          Expiry
+          <input id="field-expiry" name="expiry" type="text" required pattern="(0[1-9]|1[0-2])/[0-9]{2}" placeholder="12/30">
+        </label>
+        <label>
+          CVC
+          <input id="field-cvc" name="cvc" type="text" inputmode="numeric" required pattern="[0-9]{3,4}" placeholder="123">
+        </label>
+      </div>
+
+      <p id="checkout-error" class="error" role="alert" hidden></p>
+      <button id="place-order-btn" class="button primary large" type="button">Place order</button>
+      <p class="fine-print">Demo only. No card is charged and no order is shipped.</p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Tiny Shop is a demo store built for the Kane CLI Hackathon.</p>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

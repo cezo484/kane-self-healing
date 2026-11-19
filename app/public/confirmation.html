@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order confirmed — Tiny Shop</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="/">Tiny Shop</a>
+      <p class="tagline">Demo checkout, no real payments.</p>
+    </div>
+  </header>
+
+  <main class="wrap narrow">
+    <section class="confirmation" aria-label="Order confirmation">
+      <p class="confirmation-mark" aria-hidden="true">✓</p>
+      <h1>Order confirmed</h1>
+      <p id="confirmation-loading">Loading your order…</p>
+      <div id="confirmation-details" hidden>
+        <p>Thank you, <span id="confirmation-name"></span>. Your order is in.</p>
+        <dl class="confirmation-facts">
+          <div><dt>Order number</dt><dd id="confirmation-number"></dd></div>
+          <div><dt>Items</dt><dd id="confirmation-items"></dd></div>
+          <div><dt>Total charged</dt><dd><strong id="confirmation-total"></strong></dd></div>
+        </dl>
+        <p class="fine-print">Demo only. Nothing was charged and nothing will ship.</p>
+      </div>
+      <p id="confirmation-error" class="error" role="alert" hidden></p>
+      <a class="button" href="/">Back to the shop</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Tiny Shop is a demo store built for the Kane CLI Hackathon.</p>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

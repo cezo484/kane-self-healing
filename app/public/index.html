@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiny Shop — small store, honest prices</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="/">Tiny Shop</a>
+      <p class="tagline">Small store, honest prices. Demo checkout, no real payments.</p>
+      <button id="cart-button" class="cart-button" type="button">
+        Cart (<span id="cart-count">0</span>)
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Products</h1>
+    <section id="product-list" class="product-grid" aria-label="Products"></section>
+
+    <section id="cart-panel" class="cart-panel" aria-label="Shopping cart">
+      <h2>Your cart</h2>
+      <p id="cart-empty">Your cart is empty. Add something above.</p>
+      <table id="cart-table" class="cart-table" hidden>
+        <thead>
+          <tr><th>Item</th><th>Qty</th><th>Price</th><th>Line total</th><th></th></tr>
+        </thead>
+        <tbody id="cart-rows"></tbody>
+      </table>
+      <div id="cart-footer" class="cart-footer" hidden>
+        <p class="cart-total">Total: <strong id="cart-total">$0.00</strong></p>
+        <a id="checkout-link" class="button primary" href="/checkout.html">Checkout</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Tiny Shop is a demo store built for the Kane CLI Hackathon. Checkout is a demo flow; no payment is ever taken.</p>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

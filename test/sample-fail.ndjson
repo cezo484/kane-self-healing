@@ -1,0 +1,5 @@
+{"type":"stream_start","session_id":"sample-fail"}
+{"step":"Open the store","status":"done","remark":"Store opened, 6 products listed."}
+{"step":"Add items to the cart","status":"done","remark":"Added Wireless Headphones and USB-C Cable; cart shows 2 items."}
+{"step":"Checkout","status":"failed","remark":"Clicked Place order but nothing happened: the page stayed on the checkout form and no confirmation appeared."}
+{"type":"run_end","status":"failed","summary":"Checkout failed: Place order did nothing.","reason":"The Place order button did not navigate to the confirmation page.","duration":42,"credits_consumed":12,"final_state":{"cart_total":"$102.49"},"test_url":"https://example.test/t/123","session_dir":"sample-fail"}

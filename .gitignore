@@ -1,0 +1,10 @@
+node_modules/
+.env
+evidence/runs/
+evidence/heal-report.*
+app/public/.app.js.fixed
+.testmuai/evidence/
+.testmuai/tests/
+output-*/
+*.log
+.DS_Store

@@ -1,0 +1,6 @@
+{"type":"stream_start","session_id":"sample-pass"}
+{"step":"Open the store","status":"done","remark":"Store opened, 6 products listed."}
+{"step":"Add items to the cart","status":"done","remark":"Added Wireless Headphones and USB-C Cable; cart shows 2 items."}
+{"step":"Checkout","status":"done","remark":"Form filled, Place order clicked."}
+{"step":"Confirm the order","status":"done","remark":"Confirmation page shows Order confirmed with the matching total."}
+{"type":"run_end","status":"passed","summary":"Checkout passed end to end.","reason":"","duration":38,"credits_consumed":11,"final_state":{"cart_total":"$102.49"},"test_url":"https://example.test/t/124","session_dir":"sample-pass"}
