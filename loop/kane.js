@@ -52,6 +52,13 @@ function kaneEnv(extra = {}) {
     const chrome = findChrome();
     if (chrome) env.CHROME_PATH = chrome;
   }
+  // Kane's v16-runner (Python httpx) parses NO_PROXY entries as URL patterns
+  // and crashes on bracketed/unbracketed IPv6 entries ([::1], ::1) with
+  // "Invalid port: ':1]'". But NO_PROXY must still bypass the proxy for
+  // localhost: without it the CLI routes Chrome CDP (127.0.0.1:9222) and the
+  // app through the egress proxy and hangs. Keep only plain localhost entries.
+  env.NO_PROXY = 'localhost,127.0.0.1';
+  env.no_proxy = 'localhost,127.0.0.1';
   return env;
 }
 
@@ -163,6 +170,16 @@ export async function runKane({ mode = 'testmd', flowPath = null, objective = nu
     args.push('run', objective);
   }
   args.push('--agent', '--headless', '--url', url, '--timeout', String(timeout), ...extraArgs);
+
+  // kane-cli 0.10.x does not read LT_USERNAME/LT_ACCESS_KEY from the
+  // environment for its own auth gate: a run without --username/--access-key
+  // (and without an OAuth login) exits 2 with "Not authenticated". Pass the
+  // env credentials as inline flags when present. The value here is the
+  // short-lived hsurr: surrogate from the with-lt-env wrapper, never the
+  // real key, and args are never logged anywhere in this harness.
+  if (process.env.LT_USERNAME && process.env.LT_ACCESS_KEY) {
+    args.push('--username', process.env.LT_USERNAME, '--access-key', process.env.LT_ACCESS_KEY);
+  }
 
   // Give the shell-side kill a margin over Kane's own timeout so run_end
   // still arrives when Kane times out internally.
