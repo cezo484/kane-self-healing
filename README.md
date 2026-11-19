@@ -167,6 +167,12 @@ ambiguous-patch refusal).
   decision documented. `npm test` passes; the loop refuses to patch when
   its evidence is ambiguous and refuses to call a did-not-start a failure.
 
+## Demo video & launch posts
+
+- Demo video (3:32): https://youtu.be/WhAYTFpNXUU
+- X post: https://x.com/melisim001/status/2123400146029339116
+- Reddit post: https://www.reddit.com/user/cezo484/comments/1y08qp2/i_built_a_demo_store_that_heals_itself_kane_cli/
+
 ## License
 
 MIT.
